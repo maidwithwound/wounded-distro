@@ -30,6 +30,8 @@ modules:
         - tmux
         - ranger
         - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm
+        - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-free-release-43.noarch.rpm
+        - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm
     optfix:
       - clash-verge
     remove:
