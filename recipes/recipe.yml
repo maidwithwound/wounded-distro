@@ -30,7 +30,7 @@ modules:
         - plasma-workspace-x11
         - tmux
         - ranger
-        - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm
+        - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
     optfix:
       - clash-verge
     remove:
