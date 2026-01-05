@@ -21,9 +21,14 @@ modules:
     repos:
       copr:
         - atim/starship
+        - solopasha/hyprland
     install:
       packages:
         - hyprland
+        - hyprpaper
+        - hyprpolkitagent
+        - hyprshot
+        - thunar
         - gvfs
         - git
         - pavucontrol
@@ -61,6 +66,9 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.telegram.desktop
+          - com.github.tchx84.Flatseal
+          - app.zen_browser.zen
+          - com.usebottles.bottles
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
