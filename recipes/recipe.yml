@@ -6,7 +6,7 @@ name: wounded-distro
 description: it hurts
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-nvidia
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -21,15 +21,38 @@ modules:
     repos:
       copr:
         - atim/starship
+        - solopasha/hyprland
     install:
       packages:
+        - hyprland
+        - hyprpaper
+        - hyprpolkitagent
+        - hyprshot
+        - thunar
+        - gvfs
+        - git
+        - pavucontrol
+        - pipewire
+        - pipewire-alsa
+        - pipewire-utils
+        - rofi
+        - waybar
+        - wget2
+        - wl-clipboard
+        - wlogout
+        - xdg-utils
+        - fastfetch
+        - grimblast
+        - dunst
         - zsh
         - neovim
         - alacritty
         - chromium
-        - plasma-workspace-x11
         - tmux
         - ranger
+        - qt5-qtwayland
+        - qt6-qtwayland
+        - google-noto-fonts
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
     optfix:
       - clash-verge
