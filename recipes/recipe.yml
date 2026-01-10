@@ -21,7 +21,7 @@ modules:
     repos:
       copr:
         - atim/starship
-        # - solopasha/hyprland
+        - solopasha/hyprland
     install:
       packages:
         - hyprland
