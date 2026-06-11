@@ -6,7 +6,7 @@ name: wounded-distro
 description: it hurts
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-nvidia
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -18,22 +18,46 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
-  #   repos:
-  #     copr:
+    repos:
+      copr:
+        - atim/starship
+        - lionheartp/Hyprland 
     install:
       packages:
+        - hyprland
+        - hyprpaper
+        - hyprpolkitagent
+        - hyprshot
+        - thunar
+        - gvfs
         - git
         - pavucontrol
+        - pipewire
+        - pipewire-alsa
+        - pipewire-utils
+        - rofi
+        - waybar
         - wget2
+        - wl-clipboard
+        - wlogout
+        - xdg-utils
+        - fastfetch
+        - grimblast
+        - dunst
         - zsh
         - neovim
         - alacritty
+        - chromium
         - tmux
         - ranger
         - google-noto-fonts-all
         - https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-rhel-64.rpm
+    optfix:
+      - clash-verge
     remove:
       packages:
+        # example: removing firefox (in favor of the flatpak)
+        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
@@ -43,10 +67,10 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
+          - org.telegram.desktop
           - com.github.tchx84.Flatseal
           - app.zen_browser.zen
-          - io.github.Faugus.faugus-launcher
-          - io.github.kukuruzka165.materialgram
+          - com.usebottles.bottles
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
